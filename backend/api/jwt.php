@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../vendor/autoload.php';
+
 use \Firebase\JWT\JWT;
 
 $secret_key = "YOUR_SECRET_KEY";
