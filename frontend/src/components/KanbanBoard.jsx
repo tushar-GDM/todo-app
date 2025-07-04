@@ -108,6 +108,6 @@ function KanbanBoard() {
       </DragDropContext>
     </div>
   );
-}
+} 
 
 export default KanbanBoard;
