@@ -3,7 +3,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use \Firebase\JWT\JWT;
 
-$secret_key = "YOUR_SECRET_KEY";
+$secret_key = "f7a342ce4d508bc176928ad1f3d4c6ebc99ba772e29aa34db621bc0f93db2b25";
 
 function generateJWT($userId) {
     global $secret_key;
