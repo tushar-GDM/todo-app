@@ -3,6 +3,7 @@ import axios from "axios";
 import { AuthContext } from "../context/AuthContext";
 import AddTaskForm from "./AddTaskForm";
 import SmartAssignButton from "./SmartAssignButton";
+import ActivityLog from "./ActivityLog";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 const columns = ["Todo", "In Progress", "Done"];
@@ -50,8 +51,10 @@ function KanbanBoard() {
     <div style={{ padding: "20px" }}>
       <h2>📋 Your Kanban Board</h2>
 
+      {/* Add Task */}
       <AddTaskForm onTaskAdded={fetchTasks} />
 
+      {/* Board */}
       <DragDropContext onDragEnd={onDragEnd}>
         <div style={{ display: "flex", justifyContent: "space-around", gap: "20px" }}>
           {columns.map(col => (
@@ -92,7 +95,7 @@ function KanbanBoard() {
                             <p>{task.description}</p>
                             <p>Priority: {task.priority}</p>
 
-                            {/* Smart Assign Button */}
+                            {/* Smart Assign */}
                             <SmartAssignButton taskId={task.id} onAssigned={fetchTasks} />
                           </div>
                         )}
@@ -106,8 +109,11 @@ function KanbanBoard() {
           ))}
         </div>
       </DragDropContext>
+
+      {/* Activity Log */}
+      <ActivityLog />
     </div>
   );
-} 
+}
 
 export default KanbanBoard;
